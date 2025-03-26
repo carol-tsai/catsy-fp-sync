@@ -1,7 +1,7 @@
 # .gitignore for PHP + MySQL Product Updater App
 
 # Environment/config files (sensitive data)
-/config/api.php
+config/api.php
 /config/database.php
 .env
 *.env.local
