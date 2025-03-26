@@ -1,0 +1,76 @@
+# .gitignore for PHP + MySQL Product Updater App
+
+# Environment/config files (sensitive data)
+/config/api.php
+/config/database.php
+.env
+*.env.local
+
+# Log files
+/logs/*
+!/logs/.gitkeep  # Keep empty directory
+
+# Temporary files
+/temp/*
+!/temp/.gitkeep
+
+# Dependency directories
+/vendor/
+/node_modules/
+
+# IDE specific files
+.idea/
+.vscode/
+*.swp
+*.swo
+*.sublime-workspace
+*.sublime-project
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Cache files
+*.cache
+*.tmp
+
+# Session files
+/sess_*
+
+# Composer files
+composer.lock
+composer.phar
+
+# System files
+*.sqlite
+*.sql
+*.dump
+
+# Development/test files
+/test/
+/tests/
+/build/
+
+# Editor files
+*.swp
+*~
+*.bak
+*.save
+
+# Optional: Ignore built CSS/JS if you're using preprocessors
+/public/styles.min.css
+/public/scripts.min.js
+/public/assets/dist/
+
+# Ignore local development overrides
+*.local.php
+*.dev.php
+
+# Ignore database dumps (if any)
+*.sql
+*.gz
