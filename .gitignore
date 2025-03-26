@@ -3,6 +3,7 @@
 # Environment/config files (sensitive data)
 config/api.php
 /config/database.php
+/config/auth.php
 .env
 *.env.local
 
