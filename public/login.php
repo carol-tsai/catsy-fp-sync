@@ -1,5 +1,4 @@
 <?php
-
 session_start();
 require_once __DIR__ . '/../includes/auth.php';
 
@@ -9,18 +8,16 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
     exit;
 }
 
-// Process login form
 $error = '';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = $_POST['username'] ?? '';
     $password = $_POST['password'] ?? '';
     
     if (login($username, $password)) {
-        $_SESSION['loggedin'] = true;
         header('Location: index.php');
         exit;
     } else {
-        $error = 'Invalid username or password';
+        $error = 'Invalid credentials';
     }
 }
 ?>
@@ -35,23 +32,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
     <div class="login-container">
         <h1>Product Sync Dashboard</h1>
-        <h2>Login</h2>
-        
         <?php if ($error): ?>
-            <div class="alert alert-error"><?= htmlspecialchars($error) ?></div>
+            <div class="alert error"><?= htmlspecialchars($error) ?></div>
         <?php endif; ?>
-        
         <form method="POST">
             <div class="form-group">
-                <label for="username">Username:</label>
+                <label for="username">Username</label>
                 <input type="text" id="username" name="username" required>
             </div>
-            
             <div class="form-group">
-                <label for="password">Password:</label>
+                <label for="password">Password</label>
                 <input type="password" id="password" name="password" required>
             </div>
-            
             <button type="submit" class="btn">Login</button>
         </form>
     </div>
